@@ -13,7 +13,7 @@ Welcome to the OakBite Backend API Documentation. OakBite is a multivendor food 
 
 ## Folder Structure
 
-`
+```
 oakbite-api/
 |
 ├── config/
@@ -37,7 +37,7 @@ oakbite-api/
 ├── .env
 ├── app.js
 └── package.json
-`
+```
 
 ## Getting Started
 
