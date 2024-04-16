@@ -27,7 +27,7 @@ oakbite-api/
 │
 ├── models/
 │   ├── CategoryModel.js
-│   └── VendUserModelor.js
+│   └── UserModelor.js
 |
 ├── routes/│
 │   └── categoryRoutes.js
