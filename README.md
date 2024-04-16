@@ -43,25 +43,25 @@ oakbite-api/
 
 To get started with OakBite backend development, follow these steps:
 
-1. Clone the OakBite backend repository from GitHub:
+**1.** Clone the OakBite backend repository from GitHub:
 
 ```bash
-git clone https://github.com/oakbite/oakbite-backend.git
+git clone https://github.com/samueloshio/oakbite-api.git
 ```
 
-2. Navigate to the project directory:
+**2.** Navigate to the project directory:
 
 ```bash
-cd oakbite-backend
+cd oakbite-api
 ```
 
-3. Install dependencies:
+**3.** Install dependencies:
 
 ```bash
 npm install
 ```
 
-4. Set up environment variables:
+**4.** Set up environment variables:
 
 - Create a .env file in the root directory.
 - Define the following environment variables in the .env file:
@@ -72,13 +72,13 @@ MONGODB_URI=<your_mongodb_uri>
 JWT_SECRET=<your_jwt_secret>
 ```
 
-5. Start the server:
+**5.** Start the server:
 
 ```bash
 npm start
 ```
 
-6. The server will start running on http://localhost:3000 by default.
+**6.** The server will start running on http://localhost:3000 by default.
 
 ## Authentication
 
@@ -88,7 +88,7 @@ OakBite API uses JWT (JSON Web Tokens) for authentication. To access protected r
 
 - '**POST /api/auth/register**': Register a new user.
 - '**POST /api/auth/login**': Log in an existing user and obtain a JWT token.
-- `**GET /api/auth/logout**`: Log out the current user.
+- '**GET /api/auth/logout**': Log out the current user.
 
 ## User Management
 
