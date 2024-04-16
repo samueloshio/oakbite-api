@@ -22,6 +22,7 @@ oakbite-api/
 ├── controllers/
 |   ├── categoryController.js
 |   ├── foodController.js
+│   ├── ratingController.js
 │   └── restaurantController.js
 |
 ├── middleware/
@@ -30,12 +31,14 @@ oakbite-api/
 ├── models/
 │   ├── CategoryModel.js
 │   ├── FoodModel.js
+|   ├── RatingModel.js
 |   ├── RestaurantModel.js
 │   └── UserModelor.js
 |
 ├── routes/
 |   ├── categoryRoutes.js
 |   ├── foodRoutes.js
+|   ├── RatingRoutes.js
 │   └── restaurantRoutes.js
 |
 ├── utils/
