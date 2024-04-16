@@ -8,7 +8,8 @@ import connect_db from './config/dbConfig.js';
 
 // IMPORT ROUTERS
 import categoryRouter from './routes/categoryRoutes.js';
-import restaurantRouter from '../restaurantRoutes.js';
+import restaurantRouter from './routes/restaurantRoutes.js';
+import foodRouter from './routes/foodRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -25,6 +26,7 @@ app.get('/', async (req, res, next) => {
 // ROUTES MIDDLEWARES
 app.use('/api/categories', categoryRouter);
 app.use('/api/restaurant', restaurantRouter);
+app.use('/api/foods', foodRouter);
 
 app.use((req, res, next) => {
   next(NotFound(404, 'Hush!!! Sorry, Route Not Found'));

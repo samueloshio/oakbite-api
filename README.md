@@ -20,21 +20,28 @@ oakbite-api/
 |   └── dbConfig.js
 |
 ├── controllers/
-│   └── categoryController.js
+|   ├── categoryController.js
+|   ├── foodController.js
+│   └── restaurantController.js
 |
 ├── middleware/
 │
 │
 ├── models/
 │   ├── CategoryModel.js
+│   ├── FoodModel.js
+|   ├── RestaurantModel.js
 │   └── UserModelor.js
 |
-├── routes/│
-│   └── categoryRoutes.js
+├── routes/
+|   ├── categoryRoutes.js
+|   ├── foodRoutes.js
+│   └── restaurantRoutes.js
 |
 ├── utils/
 |
 ├── .env
+├── .gitignore
 ├── app.js
 └── package.json
 ```
