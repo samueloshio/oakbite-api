@@ -6,6 +6,7 @@ import NotFound from 'http-errors';
 import dotenv from 'dotenv';
 import connect_db from './config/dbConfig.js';
 
+// IMPORT ROUTERS
 import categoryRouter from './routes/categoryRoutes.js';
 
 dotenv.config();
