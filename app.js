@@ -1,17 +1,17 @@
 import express from 'express';
-// import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import cors from 'cors';
 import NotFound from 'http-errors';
 import dotenv from 'dotenv';
 import connect_db from './src/config/dbConfig.js';
-// import generateOtp from './src/utils/otp_generator.js';
 
 // IMPORT ROUTERS
-import categoryRoute from './src/routes/categoryRoutes.js';
-import restaurantRoute from './src/routes/restaurantRoutes.js';
-import foodRoute from './src/routes/foodRoutes.js';
-import ratingRoute from './src/routes/ratingRoutes.js';
+import AuthRoute from './src/routes/authRutes.js';
+import UserRoute from './src/routes/userRoutes.js';
+import CategoryRoute from './src/routes/categoryRoutes.js';
+import RestaurantRoute from './src/routes/restaurantRoutes.js';
+import FoodRoute from './src/routes/foodRoutes.js';
+import RatingRoute from './src/routes/ratingRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -25,10 +25,12 @@ app.get('/', async (req, res, next) => {
 });
 
 // ROUTES MIDDLEWARES
-app.use('/api/categories', categoryRoute);
-app.use('/api/restaurant', restaurantRoute);
-app.use('/api/foods', foodRoute);
-app.use('/api/rating', ratingRoute);
+app.use('/', AuthRoute);
+app.use('/api/users', UserRoute);
+app.use('/api/categories', CategoryRoute);
+app.use('/api/restaurant', RestaurantRoute);
+app.use('/api/foods', FoodRoute);
+app.use('/api/rating', RatingRoute);
 
 app.use((req, res, next) => {
   next(NotFound(404, 'Hush!!! Sorry, Route Not Found'));
@@ -61,7 +63,3 @@ connect_db()
   .catch((error) => {
     console.log('Invalid database connection...!');
   });
-
-// app.listen(PORT, () => {
-//   console.log(`Server connected 🚀 to http://localhost:${PORT}`);
-// });
