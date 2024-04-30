@@ -1,10 +1,10 @@
 import express from 'express';
 import {
   addRestaurant,
-  getRandomRestaurant,
   getAllNearbyRestaurant,
+  getRandomRestaurant,
   getRestaurantById,
-} from './restaurantController.js';
+} from '../controllers/restaurantController.js';
 
 const router = express.Router();
 

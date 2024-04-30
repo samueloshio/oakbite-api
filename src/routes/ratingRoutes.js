@@ -1,5 +1,5 @@
 import express from 'express';
-import { addRating, checkRating } from '../controllers/ratingController.js';
+import { addRating, checkUserRating } from '../controllers/ratingController.js';
 
 const router = express.Router();
 
@@ -7,6 +7,6 @@ const router = express.Router();
 router.post('/', addRating);
 
 // GET => /api/rating
-router.get('/', checkRating);
+router.get('/', checkUserRating);
 
 export default router;

@@ -7,7 +7,7 @@ import {
   getRecommendedmFood,
   getRandomFoodsByCategoryAndCode,
   searchFoods,
-} from './foodController.js';
+} from '../controllers/foodController.js';
 
 const router = express.Router();
 

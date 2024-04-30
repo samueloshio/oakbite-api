@@ -83,7 +83,7 @@ export const addRating = async (req, res, next) => {
     next(err);
   }
 };
-export const checkRating = async (req, res, next) => {
+export const checkUserRating = async (req, res, next) => {
   const ratingType = req.query.ratingType;
   const ratingTypeId = req.query.ratingTypeId;
   try {
