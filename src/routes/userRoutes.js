@@ -5,17 +5,18 @@ import {
   verifyAccount,
   verifyPhone,
 } from '../controllers/userController.js';
+import { verifyTokenAndAuthorization } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
 // GET => /users
-router.get('/verify/:otp', verifyAccount);
+router.get('/verify/:otp', verifyTokenAndAuthorization, verifyAccount);
 
 // GET => /users
-router.get('/verify_phone/:phone', verifyPhone);
+router.get('/verify_phone/:phone', verifyTokenAndAuthorization, verifyPhone);
 
 // GET => /users
-router.get('/', getUser);
+router.get('/', verifyTokenAndAuthorization, getUser);
 
 // DELETE => /users
 router.delete('/', deleteUser);

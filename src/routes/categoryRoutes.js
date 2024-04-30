@@ -4,11 +4,12 @@ import {
   getRandomCategory,
   getAllCategories,
 } from '../controllers/categoryController.js';
+import { verifyAdmin } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
 // POST => /api/category
-router.post('/', createCategory);
+router.post('/', verifyAdmin, createCategory);
 
 // GET => /api/random
 router.get('/random', getRandomCategory);

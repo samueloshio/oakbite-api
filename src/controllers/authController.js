@@ -6,7 +6,7 @@ import sendEmail from '../utils/send_email.js';
 
 export const signUpUser = async (req, res, next) => {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  if (!emailRegex.text(req.body.email)) {
+  if (!emailRegex.test(req.body.email)) {
     return res
       .status(401)
       .json({ status: false, message: 'Email is not valid' });
@@ -45,7 +45,7 @@ export const signUpUser = async (req, res, next) => {
     await newUser.save();
 
     // SEND OTP TO EMAIL
-    sendEmail('newUser.email', otp);
+    sendEmail(newUser.email, otp);
 
     res
       .status(201)
@@ -57,7 +57,7 @@ export const signUpUser = async (req, res, next) => {
 
 export const signInUser = async (req, res, next) => {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  if (!emailRegex.text(req.body.email)) {
+  if (!emailRegex.test(req.body.email)) {
     return res
       .status(401)
       .json({ status: false, message: 'Email is not valid' });
@@ -79,7 +79,7 @@ export const signInUser = async (req, res, next) => {
     }
 
     // DECRYPT PASSWORD
-    const decryptedPassword = CryptoJS.decrypt(
+    const decryptedPassword = CryptoJS.AES.decrypt(
       user.password,
       process.env.SECRET_KEY
     );
@@ -99,7 +99,7 @@ export const signInUser = async (req, res, next) => {
       { expiresIn: '21d' }
     );
 
-    const { password, otp, ...others } = user._doc;
+    const { password, otp, createdAt, updatedAt, __v, ...others } = user._doc;
 
     res.status(201).json({ ...others, userToken });
   } catch (err) {

@@ -5,13 +5,14 @@ import {
   getFoodById,
   getFoodsByRestaurant,
   getRecommendedmFood,
-  getRandomFoodsByCategoryAndCode,
+  // getRandomFoodsByCategoryAndCode,
   searchFoods,
 } from '../controllers/foodController.js';
+import { verifyVendor } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
-router.post('/', addFood);
+router.post('/', verifyVendor, addFood);
 
 router.get('/:id', getFoodById);
 
