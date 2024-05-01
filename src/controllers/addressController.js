@@ -55,10 +55,7 @@ export const setDefaultAddress = async (req, res, next) => {
   const userId = req.user.id;
 
   try {
-    const addresses = await Address.updateMany(
-      { userId: userId },
-      { defaultAddress: false }
-    );
+    await Address.updateMany({ userId: userId }, { defaultAddress: false });
 
     const updatedAddress = await Address.findByIdAndUpdate(addressId, {
       defaultAddress: true,
