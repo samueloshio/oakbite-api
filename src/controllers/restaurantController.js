@@ -34,7 +34,10 @@ export const addRestaurant = async (req, res, next) => {
 export const getRestaurantById = async (req, res, next) => {
   const id = req.params.id;
   try {
-    const restaurant = await Restaurant.findById(id);
+    const restaurant = await Restaurant.findById(id).populate({
+      path: 'foods',
+      select: 'title, foodType, time, imageUrl, rating, category',
+    });
     res.status(201).json(restaurant);
   } catch (err) {
     next(err);

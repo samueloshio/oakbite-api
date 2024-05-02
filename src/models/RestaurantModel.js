@@ -16,7 +16,8 @@ const RestaurantSchema = new Schema(
       required: true,
     },
     foods: {
-      type: Array,
+      type: Schema.Types.ObjectId,
+      ref: 'Food',
       dafault: [],
     },
     pickup: {
