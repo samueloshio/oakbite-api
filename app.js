@@ -6,13 +6,14 @@ import dotenv from 'dotenv';
 import connect_db from './src/config/dbConfig.js';
 
 // IMPORT ROUTERS
-import AuthRoute from './src/routes/authRutes.js';
+import AuthRoute from './src/routes/authRoutes.js';
 import UserRoute from './src/routes/userRoutes.js';
 import CategoryRoute from './src/routes/categoryRoutes.js';
 import RestaurantRoute from './src/routes/restaurantRoutes.js';
 import FoodRoute from './src/routes/foodRoutes.js';
 import RatingRoute from './src/routes/ratingRoutes.js';
 import AddressRoute from './src/routes/addressRoutes.js';
+import CartRoute from './src/routes/cartRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -33,6 +34,7 @@ app.use('/api/restaurant', RestaurantRoute);
 app.use('/api/foods', FoodRoute);
 app.use('/api/rating', RatingRoute);
 app.use('/api/address', AddressRoute);
+app.use('/api/cart', CartRoute);
 
 app.use((req, res, next) => {
   next(NotFound(404, 'Hush!!! Sorry, Route Not Found'));

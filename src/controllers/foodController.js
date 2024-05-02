@@ -4,6 +4,7 @@ export const addFood = async (req, res, next) => {
   const {
     title,
     foodTags,
+    // foodType,
     category,
     code,
     restaurant,
@@ -29,12 +30,13 @@ export const addFood = async (req, res, next) => {
       .status(401)
       .json({ status: false, message: 'You have a missing field' });
   }
+
   try {
     const newFood = new Food(req.body);
     await newFood.save();
     res
       .status(201)
-      .json({ status: false, message: 'Food has been added successfully!' });
+      .json({ status: true, message: 'Food has been added successfully!' });
   } catch (err) {
     next(err);
   }
@@ -151,6 +153,15 @@ export const getRandomFoodsByCategoryAndCode = async (req, res, next) => {
         { $project: { __v: 0 } },
       ]);
     }
+    res.status(201).json(foods);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getAllFoods = async (req, res, next) => {
+  try {
+    const foods = await Food.find();
     res.status(201).json(foods);
   } catch (err) {
     next(err);

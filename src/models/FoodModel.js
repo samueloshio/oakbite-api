@@ -12,7 +12,7 @@ const FoodSchema = new Schema(
       required: true,
     },
     imageUrl: {
-      type: String,
+      type: Array,
       required: true,
     },
     foodTags: {
@@ -32,8 +32,9 @@ const FoodSchema = new Schema(
       default: true,
     },
     restaurant: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       required: true,
+      ref: 'Restaurant',
     },
     code: {
       type: String,

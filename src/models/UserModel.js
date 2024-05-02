@@ -35,7 +35,7 @@ const UserSchema = new Schema(
       default: false,
     },
     address: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: 'Address',
       required: false,
     },
