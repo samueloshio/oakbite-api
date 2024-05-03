@@ -15,11 +15,12 @@ const RestaurantSchema = new Schema(
       type: String,
       required: true,
     },
-    foods: {
-      type: Schema.Types.ObjectId,
-      ref: 'Food',
-      dafault: [],
-    },
+    foods: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Food',
+      },
+    ],
     pickup: {
       type: Boolean,
       default: true,
