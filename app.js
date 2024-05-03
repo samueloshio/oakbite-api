@@ -14,6 +14,7 @@ import FoodRoute from './src/routes/foodRoutes.js';
 import RatingRoute from './src/routes/ratingRoutes.js';
 import AddressRoute from './src/routes/addressRoutes.js';
 import CartRoute from './src/routes/cartRoutes.js';
+import OrderRoute from './src/routes/orderRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -35,6 +36,7 @@ app.use('/api/foods', FoodRoute);
 app.use('/api/rating', RatingRoute);
 app.use('/api/address', AddressRoute);
 app.use('/api/cart', CartRoute);
+app.use('/api/order', OrderRoute);
 
 app.use((req, res, next) => {
   next(NotFound(404, 'Hush!!! Sorry, Route Not Found'));
