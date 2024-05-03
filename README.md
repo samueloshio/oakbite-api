@@ -14,38 +14,55 @@ Welcome to the OakBite Backend API Documentation. OakBite is a multivendor food 
 ## Folder Structure
 
 ```
-oakbite-api/
+oakbite-api
 |
-├── config/
-|   └── dbConfig.js
-|
-├── controllers/
-|   ├── categoryController.js
-|   ├── foodController.js
-│   ├── ratingController.js
-│   └── restaurantController.js
-|
-├── middleware/
-│
-│
-├── models/
-│   ├── CategoryModel.js
-│   ├── FoodModel.js
-|   ├── RatingModel.js
-|   ├── RestaurantModel.js
-│   └── UserModelor.js
-|
-├── routes/
-|   ├── categoryRoutes.js
-|   ├── foodRoutes.js
-|   ├── RatingRoutes.js
-│   └── restaurantRoutes.js
-|
-├── utils/
+├── src
+|   ├──config
+|   |   └── dbConfig.js
+|   |
+|   ├── controllers
+|   |   ├── addressController.js
+|   |   ├── authController.js
+|   |   ├── cartController.js
+|   |   ├── categoryController.js
+|   |   ├── foodController.js
+|   |   ├── orderController.js
+|   |   ├── ratingController.js
+|   |   ├── restaurantController.js
+|   │   └── userController.js
+|   |
+|   ├── middleware
+│   │    └── verifyToken.js
+│   │
+|   ├── models/
+|   |   ├── AddressModel.js
+|   |   ├── CartModel.js
+|   |   ├── CategoryModel.js
+|   |   ├── FoodModel.js
+|   |   ├── OrderModel.js
+|   |   ├── RatingModel.js
+|   |   ├── RestaurantModel.js
+|   │   └── UserModel.js
+|   |
+|   ├── routes
+|   |   ├── addressRoutes.js
+|   |   ├── authRoutes.js
+|   |   ├── cartRoutes.js
+|   |   ├── categoryRoutes.js
+|   |   ├── foodRoutes.js
+|   |   ├── orderRoutes.js
+|   |   ├── ratingRoutes.js
+|   |   ├── restaurantRoutes.js
+|   │   └── userRoutes.js
+|   |
+|   └── utils
+|       ├── otp_generator.js
+|       └── send_mail.js
 |
 ├── .env
 ├── .gitignore
 ├── app.js
+├── package-lock.json
 └── package.json
 ```
 
