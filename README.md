@@ -90,13 +90,21 @@ npm install
 
 **4.** Set up environment variables:
 
-- Create a .env file in the root directory.
+- Copy the .env.example to .env file in the root directory.
+
+```bash
+cp .env.example .env
+```
+
 - Define the following environment variables in the .env file:
 
 ```makefile
 PORT=3000
 MONGODB_URI=<your_mongodb_uri>
-JWT_SECRET=<your_jwt_secret>
+JWT_SECRET=<your_jwt_secret_key>
+SECRET_KEY=<your_secret_key>
+AUTH_EMAIL=<your_smtp_email>
+AUTH_PASSWORD=<your_smtp_password>
 ```
 
 **5.** Start the server:
